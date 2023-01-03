@@ -82,11 +82,7 @@ const main = async () => {
     for (const todo of todos) {
         const task = taskSet[todo.alias];
         if (!task) {
-            if (!todo.completed) {
-                completedTodos.push(todo);
-            } else {
-                removedTodos.push(todo);
-            }
+            completedTodos.push(todo);
             continue;
         }
 

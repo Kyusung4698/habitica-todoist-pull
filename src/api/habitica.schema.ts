@@ -12,13 +12,16 @@ export namespace Habitica {
         }
 
         export type Type = 'habit' | 'daily' | 'todo' | 'reward';
-        export type Types = 'habits' | 'dailys' | 'todos' | 'rewards';
+        export type Types = 'habits' | 'dailys' | 'todos' | 'rewards' | 'completedTodos';
 
         export interface Task {
             alias: string;
             type: Type;
             text: string;
             notes: string;
+            /**
+            * @deprecated This will always be false. Unless fetching with type as completedTodos
+            */
             completed: boolean;
             date?: Date;
             priority?: Priority;
