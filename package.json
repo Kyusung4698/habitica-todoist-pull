@@ -1,8 +1,13 @@
 {
   "name": "habitica-todoist-pull",
+  "description": "A simple script that pulls tasks from Todoist and pushes them into Habitica",
   "version": "1.0.0",
   "type": "module",
   "author": "Kyusung4698",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Kyusung4698/habitica-todoist-pull"
+  },
   "license": "MIT",
   "scripts": {
     "execute": "ts-node --transpile-only --esm --experimental-specifier-resolution=node src/main.ts"
