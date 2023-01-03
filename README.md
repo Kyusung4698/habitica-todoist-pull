@@ -13,13 +13,13 @@ To access both services the script requires your authentication tokens to author
 ### Todoist
 
 Write down your `API Token` from your [Todoist user settings](https://todoist.com/app/settings/integrations/developer). \
-![habitica](./docs/todoist-secrets.png)
+![habitica](./docs/todoist-secrets.png)\
 https://todoist.com/app/settings/integrations/developer
 
 ### Habitica
 
 Write down your `User ID` and `API Token` from your [Habitica user settings](https://habitica.com/user/settings/api). \
-![habitica](./docs/habitica-secrets.png)
+![habitica](./docs/habitica-secrets.png)\
 https://habitica.com/user/settings/api
 
 ## Run as CLI (NodeJS)
