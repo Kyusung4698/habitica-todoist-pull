@@ -1,8 +1,8 @@
 # Habitica _x_ Todoist
 
-![logo](./docs/logo.png)
+![script logo](./docs/logo.png)
 
-## What?
+## About
 
 A simple script that pulls tasks from [Todoist](https://todoist.com/) and pushes them into [Habitica](https://habitica.com/). Any changes on the Habitica side won't be _pushed_ back. Completing a task in Todoist will also mark it as completed in Habitica.
 
@@ -13,13 +13,13 @@ To access both services the script requires your authentication tokens to author
 ### Todoist
 
 Write down your `API Token` from your [Todoist user settings](https://todoist.com/app/settings/integrations/developer). \
-![habitica](./docs/todoist-secrets.png)\
+![todoist user settings](./docs/todoist-secrets.png)\
 https://todoist.com/app/settings/integrations/developer
 
 ### Habitica
 
 Write down your `User ID` and `API Token` from your [Habitica user settings](https://habitica.com/user/settings/api). \
-![habitica](./docs/habitica-secrets.png)\
+![habitica user settings](./docs/habitica-secrets.png)\
 https://habitica.com/user/settings/api
 
 ## Run as CLI (NodeJS)
@@ -37,6 +37,10 @@ Can be run from any cmd line tool like this:
 habitica-todoist-pull <todoist_api_token> <habitica_user_id> <habitica_api_token>
 ```
 
-## Run as CRON Job (GitHub Worker)
+## Run as CRON job (GitHub Worker)
 
-_TODO_
+To run this script periodically you can setup a cron job using GitHub workers. This requires a GitHub account but should be otherwise free. 
+
+1. Fork this repository ![GitHub fork](./docs/github-fork.png)
+2. Update/create the required action secrets in your repository ![GitHub secrets](./docs/github-secrets.png)
+3. Test the workflow by triggering a manual run ![GitHub actions](./docs/github-actions.png)
