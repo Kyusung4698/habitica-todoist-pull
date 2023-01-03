@@ -24,7 +24,7 @@ https://habitica.com/user/settings/api
 
 ## Run as CLI (NodeJS)
 
-To run this script locally, you can install it as CLI via npm/yarn/etc.
+To run this script locally (and manually), you can install it as CLI via npm/yarn/etc.
 ```bash
 npm install -g habitica-todoist-pull
 ```
