@@ -2,11 +2,13 @@
   "name": "habitica-todoist-pull",
   "version": "1.0.0",
   "type": "module",
-  "main": "index.js",
   "author": "Kyusung4698",
   "license": "MIT",
   "scripts": {
     "execute": "ts-node --transpile-only --esm --experimental-specifier-resolution=node src/main.ts"
+  },
+  "bin": {
+    "habitica-todoist-pull": "./cli.js"
   },
   "devDependencies": {
     "@tsconfig/node18-strictest-esm": "^1.0.1",
@@ -16,6 +18,7 @@
   "dependencies": {
     "dotenv": "^16.0.3",
     "node-fetch": "^3.3.0",
-    "ts-node": "^10.9.1"
+    "ts-node": "^10.9.1",
+    "yargs": "^17.6.2"
   }
 }
