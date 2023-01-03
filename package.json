@@ -6,7 +6,7 @@
   "author": "Kyusung4698",
   "license": "MIT",
   "scripts": {
-    "pull": "ts-node --transpile-only --esm --experimental-specifier-resolution=node src/main.ts"
+    "execute": "ts-node --transpile-only --esm --experimental-specifier-resolution=node src/main.ts"
   },
   "devDependencies": {
     "@tsconfig/node18-strictest-esm": "^1.0.1",
