@@ -1,7 +1,7 @@
 {
   "name": "habitica-todoist-pull",
   "description": "A simple script that pulls tasks from Todoist and pushes them into Habitica",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "type": "module",
   "author": "Kyusung4698",
   "repository": {
