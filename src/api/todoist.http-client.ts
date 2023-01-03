@@ -9,23 +9,6 @@ export class TodoistHttpClient {
         private readonly token: string
     ) { }
 
-    public async getProjects(): Promise<Todoist.Project[] | null> {
-        try {
-            const response = await fetch(
-                this.buildUrl('/projects'),
-                this.createConfig()
-            );
-            if (!response.ok) {
-                throw new Error(response.statusText);
-            }
-            const body = await response.json() as Todoist.Project[];
-            return body;
-        } catch (error) {
-            this.logger.warn('Unable to fetch projects.', error);
-            return null;
-        }
-    }
-
     public async getTasks(): Promise<Todoist.Task[] | null> {
         try {
             const response = await fetch(

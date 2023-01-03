@@ -12,15 +12,8 @@ const main = async () => {
         process.env.TODOIST_API_TOKEN
     );
 
-    const [
-        projects,
-        tasks
-    ] = await Promise.all([
-        todoist.getProjects(),
-        todoist.getTasks()
-    ]);
-
-    if (!projects || !tasks) {
+    const tasks = await todoist.getTasks();
+    if (!tasks) {
         return false;
     }
 

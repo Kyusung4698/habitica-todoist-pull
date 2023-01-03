@@ -1,10 +1,4 @@
 export namespace Todoist {
-    export interface Project {
-        id: string;
-        parent_id?: string;
-        name: string;
-    }
-
     export interface Task {
         id: string;
         project_id: string;
