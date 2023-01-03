@@ -10,7 +10,7 @@ export class HabiticaHttpClient {
 
     constructor(
         private readonly userId: string,
-        private readonly apiKey: string
+        private readonly apiToken: string
     ) { }
 
     public async getUserTasks(
@@ -133,7 +133,7 @@ export class HabiticaHttpClient {
             headers: {
                 ...(init?.headers || {}),
                 'x-api-user': this.userId,
-                'x-api-key': this.apiKey,
+                'x-api-key': this.apiToken,
                 'x-client': CLIENT_ID
             }
         }

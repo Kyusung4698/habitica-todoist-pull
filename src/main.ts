@@ -19,7 +19,7 @@ const main = async () => {
 
     const habitica = new HabiticaHttpClient(
         process.env.HABITICA_USER_ID,
-        process.env.HABITICA_API_KEY
+        process.env.HABITICA_API_TOKEN
     );
 
     const todos = await habitica.getUserTasks('todos');

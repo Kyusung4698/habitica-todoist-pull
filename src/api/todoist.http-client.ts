@@ -6,7 +6,7 @@ export class TodoistHttpClient {
     private readonly logger = createLogger('todoist');
 
     constructor(
-        private readonly token: string
+        private readonly apiToken: string
     ) { }
 
     public async getTasks(): Promise<Todoist.Task[] | null> {
@@ -39,7 +39,7 @@ export class TodoistHttpClient {
             ...init,
             headers: {
                 ...(init?.headers || {}),
-                'Authorization': `Bearer ${this.token}`
+                'Authorization': `Bearer ${this.apiToken}`
             }
         }
     }

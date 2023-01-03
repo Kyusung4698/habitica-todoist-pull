@@ -11,7 +11,7 @@ const __dirname = path.dirname(__filename);
 
 yargs(hideBin(process.argv))
     .command(
-        '$0 <todoist_api_token> <habitica_user_id> <habitica_api_key>',
+        '$0 <todoist_api_token> <habitica_user_id> <habitica_api_token>',
         'pulls todoist tasks and pushes habitica todos (one-way)',
         () => { },
         argv => spawn('npm', ['run', 'execute'], {
@@ -22,7 +22,7 @@ yargs(hideBin(process.argv))
                 ...process.env,
                 TODOIST_API_TOKEN: argv.todoist_api_token,
                 HABITICA_USER_ID: argv.habitica_user_id,
-                HABITICA_API_KEY: argv.habitica_api_key,
+                HABITICA_API_TOKEN: argv.habitica_api_token,
             }
         })
     )
