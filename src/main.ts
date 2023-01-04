@@ -86,6 +86,8 @@ const main = async () => {
         }
     }
 
+    let success = true;
+
     logger.debug(`Outstanding creation actions: ${createdTodos.length}`);
     try {
         const createTasks$ = createdTodos
@@ -94,6 +96,7 @@ const main = async () => {
         await Promise.all(createTasks$);
         logger.info(`Created ${createTasks$.length} tasks.`);
     } catch (error) {
+        success = false;
         logger.warn('Unable to execute creation actions.', error);
     }
 
@@ -112,6 +115,7 @@ const main = async () => {
         await Promise.all(updateTasks$);
         logger.info(`Updated ${updateTasks$.length} tasks.`);
     } catch (error) {
+        success = false;
         logger.warn('Unable to execute update actions.', error);
     }
 
@@ -123,6 +127,7 @@ const main = async () => {
         await Promise.all(scoreTasks$);
         logger.info(`Scored ${scoreTasks$.length} tasks.`);
     } catch (error) {
+        success = false;
         logger.warn('Unable to execute completion actions.', error);
     }
 
@@ -134,15 +139,23 @@ const main = async () => {
         await Promise.all(removeTasks$);
         logger.info(`Removed ${removeTasks$.length} tasks.`);
     } catch (error) {
+        success = false;
         logger.warn('Unable to execute remove actions.', error);
     }
 
-    return true;
+    return success;
 };
 
 main()
-    .then(success => success
-        ? logger.info('Finished.')
-        : logger.warn('Failed.')
-    )
-    .catch(logger.error);
+    .then(success => {
+        if (success) {
+            logger.info('Finished.');
+            return;
+        }
+        logger.warn('Failed.');
+        process.exit(1);
+    })
+    .catch(error => {
+        logger.error('An error occurred.', error)
+        process.exit(2);
+    });
